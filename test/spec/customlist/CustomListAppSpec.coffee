@@ -201,7 +201,8 @@ describe 'Rally.apps.customlist.CustomListApp', ->
 
     describe 'contains invalid field names', ->
       beforeEach ->
-        @createAppWithQuery '(((Turd.Name = "Poopy McPoop") OR (Project.ObjectID = 123)) AND ((PoopBoolean = false) OR (TargetDate = 01/01/01)) OR (Name contains "poop"))'
+        @createAppWithQuery '(((Turd.Name = "Poopy McPoop") OR (Project.ObjectID = 123)) AND ((PoopBoolean = false) OR (TargetDate = 01/01/01)) OR (KanbanState = "In-Deep-Poop"))'
+
       it 'should not make a request to WSAPI', ->
         expect(@artifactRequest.callCount).toBe 0
 
